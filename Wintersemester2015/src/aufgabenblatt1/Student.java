@@ -19,10 +19,18 @@ public class Student implements Comparable<Student> {
    */
   private String nachname;
   
+  /**
+   * Getter
+   * @return vorname
+   */
   public String getVorname() {
     return vorname;
   }
 
+  /**
+   * Getter
+   * @return nachname
+   */
   public String getNachname() {
     return nachname;
   }
@@ -40,8 +48,7 @@ public class Student implements Comparable<Student> {
   
   /**
    * Konstruktor
-   * @param
-   * ..
+   * @param vorname nachname matrikelnummer
    */
   public Student(String vorname,String nachname,int matrikelnummer){
     this.vorname= vorname;
@@ -52,7 +59,9 @@ public class Student implements Comparable<Student> {
 
   /**
    * Vergleicht zwei Stundenten nach Matrikelnumer
-   * @return
+   * @return 0, wenn Matrikelnummer gleich
+   *  1 wenn Matrikelnummer des Arguments kleiner
+   *  -1 wenn Matrikelnummer des Arguments größer
    */
   @Override
   public int compareTo(Student andererStudent) {
@@ -64,6 +73,4 @@ public class Student implements Comparable<Student> {
     }
      return 0;
   }
-  
-
 }
