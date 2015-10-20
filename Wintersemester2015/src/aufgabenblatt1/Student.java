@@ -36,7 +36,7 @@ public class Student implements Comparable<Student> {
   }
 
   /**
-   * Matrikelnummer des Studenten
+   * Matrikelnummer des Studenten blala
    */
   private int matrikelnummer;
   
