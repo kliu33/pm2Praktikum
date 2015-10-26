@@ -8,7 +8,7 @@ package aufgabenblatt1;
  * @param <T>
  *          generischer Typ
  */
-public class ArrayListe<T> {
+public class ArrayListe<T extends Comparable<T>> {
 
   /**
    * Anzahl der Elemente in der Liste.
@@ -31,7 +31,9 @@ public class ArrayListe<T> {
   /**
    * Die Methode fügt ein Element zur Liste hinzu. Null wird nicht zur Liste
    * hinzugefügt.
-   * @param ein Element,dass zur Liste hinzugefügt werden soll.
+   * 
+   * @param ein
+   *          Element,dass zur Liste hinzugefügt werden soll.
    */
   public void hinzufuegen(T element) {
 
@@ -54,13 +56,11 @@ public class ArrayListe<T> {
    *          Index von den Element
    * @return Objekt des Types T
    */
-  public T get(int index) {
-    try {
-      return (T) elemente[index];
-    } catch (IndexOutOfBoundsException e) {
-      System.err.println("Ungültiger Index!+\n");
-      return null;
+  public T get(int index) throws IndexOutOfBoundsException {
+    if (elemente.length < index) {
+      throw new IndexOutOfBoundsException();
     }
+    return (T) elemente[index];
   }
 
   /**
@@ -98,6 +98,7 @@ public class ArrayListe<T> {
 
   /**
    * Getter
+   * 
    * @return Anzahl der Elemente in der Liste.
    */
   public int getAnzahlElemente() {
@@ -124,29 +125,76 @@ public class ArrayListe<T> {
    * funktioniert nur mit Zahlen.
    * 
    * @return liefet das kleinste Element bei Zahlen. ansonsten null(außer bei
-   * einem Element)
+   *         einem Element)
    */
   public T getKleinstesElement() {
 
     Integer kleinstesElement = 0;
 
-    switch (elemente.length) {
-    case 0:
+    try{
+     int x =(int) elemente[0];
+    }catch(Exception e){
       return null;
-    case 1:
-      return (T) elemente[0];
-    default:
-      if (elemente[0] instanceof Number) {
-        kleinstesElement = (int) elemente[0];
-        for (int i = 0; i < elemente.length; i++) {
-          if (((int) elemente[i]) < (int) kleinstesElement) {
-            kleinstesElement = (int) elemente[i];
-          }
-        }
-        return (T) kleinstesElement;
-      }
-      return (T) null;
     }
+
+    if (elemente[0] instanceof Number) {
+      kleinstesElement = (int) elemente[0];
+      for (int i = 0; i < elemente.length; i++) {
+        if (((int) elemente[i]) < (int) kleinstesElement) {
+          kleinstesElement = (int) elemente[i];
+        }
+      }
+      return (T) kleinstesElement;
+    }
+    return (T) null;
+  }
+
+  /**
+   * Liefert das kleinste Element für alle Klassen die Comparable
+   * implementieren.
+   * 
+   * @return das kleinste Element in der Liste
+   */
+  public T getKleinstesElementUpperbound() {
+
+    try{
+      T x =(T) elemente[0];
+     }catch(Exception e){
+       return null;
+     }
+
+      T kleinstesElement = (T) elemente[0];
+      for (int i = 0; i < elemente.length; i++) {
+        if (kleinstesElement.compareTo((T) elemente[i]) > 0) {
+
+          kleinstesElement = (T) elemente[i];
+        } 
+    }
+      return kleinstesElement;
+  }
+
+  /**
+   * Berechnet für eine Liste aus Integer-Zahlen die Summe.
+   * 
+   * @return die Summe aus Integern.
+   */
+  public int summeBerechnen() {
+    
+    try{
+      int x =(int) elemente[0];
+     }catch(Exception e){
+       return 0;
+     }
+    
+    int summe = 0;
+    if (elemente[0] instanceof Integer) {
+      for (int i = 0; i < elemente.length; i++) {
+        summe = (int) elemente[i] + summe;
+      }
+      return summe;
+    }
+    System.err.println("Die Liste besteht nicht aus Integer-Zahlen.");
+    return summe;
   }
 
   /**
@@ -182,24 +230,29 @@ public class ArrayListe<T> {
    */
   public static void main(String[] args) {
     ArrayListe<String> list = new ArrayListe<String>();
-    list.hinzufuegen("Bayern");
-    list.hinzufuegen("Bayern");
-    list.hinzufuegen("Bayer");
-    list.hinzufuegen("Dortmund");
-    System.out.println(list.getAnzahlElemente());
+
+    list.hinzufuegen("aachen");
+    list.hinzufuegen("aayern");
+    list.hinzufuegen("alachen");
+    list.hinzufuegen("ab");
+    // System.out.println(list.getAnzahlElemente());
     System.out.println(list.toString());
 
-    list.entferneElementAnIndex(0);
-    list.entferneElementAnIndex(1);
-    System.out.println(list.getAnzahlElemente());
-
+    // System.out.println(list.getAnzahlElemente());
     System.out.println(list.toString());
+
+    // System.out.println(list.toString());
     ArrayListe<Integer> liste = new ArrayListe<Integer>();
+    System.out.println(list.getKleinstesElementUpperbound());
     liste.hinzufuegen(123);
+
     liste.hinzufuegen(345);
     liste.hinzufuegen(3);
-    System.out.println(liste.toString());
-    System.out.println(liste.getKleinstesElement());
+    // System.out.println(liste.toString());
+
+    // System.out.println(list.summeBerechnen());
+
+    // System.out.println(liste.getKleinstesElement());
 
   }
 }
