@@ -92,7 +92,7 @@ public class ArrayListe<T extends Comparable<T>> {
       elemente[index] = null;
       nullEntfernen();
     } catch (IndexOutOfBoundsException e) {
-      System.err.println("Ungültiger Index!\n");
+    //  System.err.println("Ungültiger Index!\n");
     }
   }
 
@@ -132,7 +132,7 @@ public class ArrayListe<T extends Comparable<T>> {
     Integer kleinstesElement = 0;
 
     try{
-     int x =(int) elemente[0];
+     get(0); 
     }catch(Exception e){
       return null;
     }
@@ -158,7 +158,7 @@ public class ArrayListe<T extends Comparable<T>> {
   public T getKleinstesElementUpperbound() {
 
     try{
-      T x =(T) elemente[0];
+      get(0);
      }catch(Exception e){
        return null;
      }
@@ -166,7 +166,6 @@ public class ArrayListe<T extends Comparable<T>> {
       T kleinstesElement = (T) elemente[0];
       for (int i = 0; i < elemente.length; i++) {
         if (kleinstesElement.compareTo((T) elemente[i]) > 0) {
-
           kleinstesElement = (T) elemente[i];
         } 
     }
@@ -181,7 +180,7 @@ public class ArrayListe<T extends Comparable<T>> {
   public int summeBerechnen() {
     
     try{
-      int x =(int) elemente[0];
+      get(0);
      }catch(Exception e){
        return 0;
      }
@@ -198,6 +197,7 @@ public class ArrayListe<T extends Comparable<T>> {
   }
 
   /**
+   * interne Hilfsmethode
    * Verkleinert das Array an den Stellen mit null.
    */
   private void nullEntfernen() {
@@ -229,30 +229,30 @@ public class ArrayListe<T extends Comparable<T>> {
    *          Kommandozeilenparameter
    */
   public static void main(String[] args) {
-    ArrayListe<String> list = new ArrayListe<String>();
-
-    list.hinzufuegen("aachen");
-    list.hinzufuegen("aayern");
-    list.hinzufuegen("alachen");
-    list.hinzufuegen("ab");
-    // System.out.println(list.getAnzahlElemente());
-    System.out.println(list.toString());
-
-    // System.out.println(list.getAnzahlElemente());
-    System.out.println(list.toString());
-
-    // System.out.println(list.toString());
-    ArrayListe<Integer> liste = new ArrayListe<Integer>();
-    System.out.println(list.getKleinstesElementUpperbound());
-    liste.hinzufuegen(123);
-
-    liste.hinzufuegen(345);
-    liste.hinzufuegen(3);
-    // System.out.println(liste.toString());
-
-    // System.out.println(list.summeBerechnen());
-
-    // System.out.println(liste.getKleinstesElement());
+//    ArrayListe<String> list = new ArrayListe<String>();
+//
+//    list.hinzufuegen("aachen");
+//    list.hinzufuegen("aayern");
+//    list.hinzufuegen("alachen");
+//    list.hinzufuegen("ab");
+//    // System.out.println(list.getAnzahlElemente());
+//    System.out.println(list.toString());
+//
+//    // System.out.println(list.getAnzahlElemente());
+//    System.out.println(list.toString());
+//
+//    // System.out.println(list.toString());
+//    ArrayListe<Integer> liste = new ArrayListe<Integer>();
+//    System.out.println(list.getKleinstesElementUpperbound());
+//    liste.hinzufuegen(123);
+//
+//    liste.hinzufuegen(345);
+//    liste.hinzufuegen(3);
+//    // System.out.println(liste.toString());
+//
+//    // System.out.println(list.summeBerechnen());
+//
+//    // System.out.println(liste.getKleinstesElement());
 
   }
 }

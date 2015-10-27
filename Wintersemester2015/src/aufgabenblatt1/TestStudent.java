@@ -34,8 +34,21 @@ public class TestStudent {
    * Matrikelnummer des Arguments größer
    */
   @Test
-  public void TestCompareto_2() {
+  public void TestCompareto2() {
     assertEquals("Fehler beim Vergleichen", student2.compareTo(student1), -1);
+  }
+  
+  /**
+   * null testen
+   */
+  @Test
+  public void TestCompareto3() {
+    try{
+      student2.compareTo(null);
+      assertTrue("Fehler bei NUll",false);
+    }catch(NullPointerException e){
+     // Alles richtig(Exception wurde geworfen)
+    } 
   }
 
   /**
@@ -51,16 +64,17 @@ public class TestStudent {
    * Argumente vertauscht
    */
   @Test
-  public void TestComparator_2() {
+  public void TestComparator2() {
     assertTrue("Fehler beim Vergleichen(Comparator)",
         new StudentenComparator().compare(student2, student1) < 0);
   }
 
   /**
    * gleicher Nachname
+   * student 3 alphabetisch vorne
    */
   @Test
-  public void TestComparator_3() {
+  public void TestComparator3() {
     assertTrue("Fehler beim Vergleichen(Comparator)",
         new StudentenComparator().compare(student2, student3) > 0);
   }
@@ -69,7 +83,7 @@ public class TestStudent {
    * null
    */
   @Test
-  public void TestComparator_4() {
+  public void TestComparator4() {
     assertTrue("Fehler beim Vergleichen(Comparator)",
         new StudentenComparator().compare(null, null) == 0);
   }

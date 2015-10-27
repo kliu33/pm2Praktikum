@@ -24,7 +24,7 @@ public class StudentenComparator implements Comparator<Student> {
     }
     return student.getVorname().compareTo(andererStudent.getVorname());
     }catch(NullPointerException exception){
-      System.err.println("Fehler");
+  //    System.err.println("Fehler");
       return 0;
     }
   }
