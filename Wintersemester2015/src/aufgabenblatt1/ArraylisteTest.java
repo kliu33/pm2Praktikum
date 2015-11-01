@@ -7,7 +7,7 @@ import org.junit.Test;
 
 /**
  * Testklasse für ArrayListe.
- * @author wilhelm
+ * @author Mona Lüdemann und Wilhelm Schumacher
  *
  */
 public class ArraylisteTest {

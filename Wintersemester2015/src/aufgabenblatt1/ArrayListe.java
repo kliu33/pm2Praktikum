@@ -3,7 +3,7 @@ package aufgabenblatt1;
 /**
  * Die Klasse repräsentiert eine Arrayliste.
  * 
- * @author wilhelm
+ * @author Mona Lüdemann und Wilhelm Schumacher
  *
  * @param <T>
  *          generischer Typ

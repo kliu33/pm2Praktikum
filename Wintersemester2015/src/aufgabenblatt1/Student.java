@@ -1,10 +1,18 @@
 package aufgabenblatt1;
+/**
+ * Praktikum BTI2-PMP/01 WS 2015/2016
+ * Gruppe: Wilhelm Schumacher(wilhelm.schumacher@haw-hamburg.de),
+ *         Mona Lüdemann(mona.lüdemann@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 1, Aufgabe 1-4   
+ * Verwendete Quellen: keine     
+ */
 
 import java.util.ArrayList;
 
 /**
  * Eine Klasse, die einen Studenten repräsentiert.
- * @author wilhelm
+ * 
+ * @author Mona Lüdemann und Wilhelm Schumacher
  *
  */
 public class Student implements Comparable<Student> {

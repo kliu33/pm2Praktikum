@@ -3,7 +3,7 @@ package aufgabenblatt1;
 /**
  * Eine Klasse für die static Methode.
  * 
- * @author wilhelm
+ * @author Mona Lüdemann und Wilhelm Schumacher
  *
  */
 public class Main {

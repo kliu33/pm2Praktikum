@@ -1,7 +1,7 @@
 package aufgabenblatt1;
 /**
  * Eine Klasse, die eine Pruefungsleistung( Note und Modul) repräsentiert.
- * @author wilhelm
+ * @author Mona Lüdemann und Wilhelm Schumacher
  *
  */
 public class Pruefungsleistung {

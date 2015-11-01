@@ -4,7 +4,8 @@ import java.util.Comparator;
 
 /**
  * Vergleicht zwei Studenten.
- * @author wilhelm
+ * 
+ * @author Mona Lüdemann und Wilhelm Schumacher
  *
  */
 public class StudentenComparator implements Comparator<Student> {
