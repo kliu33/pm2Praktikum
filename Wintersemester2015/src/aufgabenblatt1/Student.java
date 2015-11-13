@@ -46,7 +46,6 @@ public class Student implements Comparable<Student> {
     this.vorname= vorname;
     this.nachname=nachname;
     this.matrikelnummer= matrikelnummer;
-    notenliste = null;
   }
   
   /**
@@ -92,10 +91,10 @@ public class Student implements Comparable<Student> {
    *  -1 wenn Matrikelnummer des Arguments größer
    */
   @Override
-  public int compareTo(Student andererStudent) throws NullPointerException {
+  public int compareTo(Student andererStudent) throws IllegalArgumentException {
     
     if (andererStudent == null){
-      throw new NullPointerException();
+      throw new IllegalArgumentException();
     }
     
     if (matrikelnummer > andererStudent.matrikelnummer){

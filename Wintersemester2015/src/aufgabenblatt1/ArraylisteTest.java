@@ -38,8 +38,8 @@ public class ArraylisteTest {
       zahlenliste.hinzufuegen(8);
       zahlenliste.hinzufuegen(546);
       zahlenliste.entfernen(8);
-      assertEquals("Entfernen funktioniert nicht", "5\n546\n",
-          zahlenliste.toString());
+      assertEquals("Entfernen funktioniert nicht",(int)zahlenliste.get(1),
+          546);
     }
   }
 

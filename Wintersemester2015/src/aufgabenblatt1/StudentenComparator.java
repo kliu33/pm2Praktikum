@@ -12,22 +12,23 @@ public class StudentenComparator implements Comparator<Student> {
 
   /**
    * Vergleicht zwei Studenten nach Nachname und Vorname.
-   * @return ein Wert kleiner 0 wenn erstes Argument
-   *  im Lexikon vor dem zweiten Argument
-   * 0 wenn gleich
-   * ein Wert größer 0 wenn zweites Argument vor dem ersten
+   * 
+   * @return ein Wert kleiner 0 wenn erstes Argument im Lexikon vor dem zweiten
+   *         Argument 0 wenn gleich ein Wert größer 0 wenn zweites Argument vor
+   *         dem ersten
    */
   @Override
-  public int compare(Student student, Student andererStudent) {
-    try{
-    if (student.getNachname().compareTo(andererStudent.getNachname())!=0){
-      return student.getNachname().compareTo(andererStudent.getNachname());
+  public int compare(Student student, Student andererStudent)
+      throws IllegalArgumentException {
+
+    if (student == null || andererStudent == null) {
+      throw new IllegalArgumentException();
+    }
+
+    int eingabe=student.getNachname().compareTo(andererStudent.getNachname());
+    if (eingabe != 0) {
+      return eingabe;
     }
     return student.getVorname().compareTo(andererStudent.getVorname());
-    }catch(NullPointerException exception){
-  //    System.err.println("Fehler");
-      return 0;
-    }
   }
-
 }

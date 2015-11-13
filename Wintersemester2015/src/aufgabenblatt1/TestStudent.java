@@ -14,25 +14,12 @@ import org.junit.Test;
 public class TestStudent {
 
   /**
-   * Teststudent
-   */
-  Student student1 = new Student("Peter", "Platzhalter", 87654321);
-  
-  /**
-   * Teststudent
-   */
-  Student student2 = new Student("Max", "Mustermann", 12345678);
-  
-  /**
-   * Teststudent
-   */
-  Student student3 = new Student("Anna", "Mustermann", 42345678);
-
-  /**
    * Matrikelnummer des Arguments kleiner
    */
   @Test
   public void TestCompareto() {
+    Student student1 = new Student("Peter", "Platzhalter", 87654321);
+    Student student2 = new Student("Max", "Mustermann", 12345678);
     assertEquals("Fehler beim Vergleichen", student1.compareTo(student2), 1);
   }
 
@@ -41,20 +28,23 @@ public class TestStudent {
    */
   @Test
   public void TestCompareto2() {
+    Student student1 = new Student("Peter", "Platzhalter", 87654321);
+    Student student2 = new Student("Max", "Mustermann", 12345678);
     assertEquals("Fehler beim Vergleichen", student2.compareTo(student1), -1);
   }
-  
+
   /**
    * null testen
    */
   @Test
   public void TestCompareto3() {
-    try{
+    Student student2 = new Student("Max", "Mustermann", 12345678);
+    try {
       student2.compareTo(null);
-      assertTrue("Fehler bei NUll",false);
-    }catch(NullPointerException e){
-     // Alles richtig(Exception wurde geworfen)
-    } 
+      assertTrue("Fehler bei NUll", false);
+    } catch (IllegalArgumentException e) {
+      // Alles richtig(Exception wurde geworfen)
+    }
   }
 
   /**
@@ -62,6 +52,8 @@ public class TestStudent {
    */
   @Test
   public void TestComparator() {
+    Student student1 = new Student("Peter", "Platzhalter", 87654321);
+    Student student2 = new Student("Max", "Mustermann", 12345678);
     assertTrue("Fehler beim Vergleichen(Comparator)",
         new StudentenComparator().compare(student1, student2) > 0);
   }
@@ -71,16 +63,19 @@ public class TestStudent {
    */
   @Test
   public void TestComparator2() {
+    Student student1 = new Student("Peter", "Platzhalter", 87654321);
+    Student student2 = new Student("Max", "Mustermann", 12345678);
     assertTrue("Fehler beim Vergleichen(Comparator)",
         new StudentenComparator().compare(student2, student1) < 0);
   }
 
   /**
-   * gleicher Nachname
-   * student 3 alphabetisch vorne
+   * gleicher Nachname student 3 alphabetisch vorne
    */
   @Test
   public void TestComparator3() {
+    Student student2 = new Student("Max", "Mustermann", 12345678);
+    Student student3 = new Student("Anna", "Mustermann", 42345678);
     assertTrue("Fehler beim Vergleichen(Comparator)",
         new StudentenComparator().compare(student2, student3) > 0);
   }
@@ -90,8 +85,10 @@ public class TestStudent {
    */
   @Test
   public void TestComparator4() {
-    assertTrue("Fehler beim Vergleichen(Comparator)",
-        new StudentenComparator().compare(null, null) == 0);
+    try {
+      new StudentenComparator().compare(null, null);
+      assertTrue("Fehler beim Vergleichen(Comparator)", false);
+    } catch (IllegalArgumentException e) {
+    }
   }
-
 }
