@@ -2,7 +2,7 @@ package aufgabenblatt2;
 
 /**
  * Funktionales Interface
- * @author wilhelm
+ * @author Wilhelm und Mona
  *
  */
 @FunctionalInterface

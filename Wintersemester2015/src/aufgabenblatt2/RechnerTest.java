@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Testklasse
  * 
- * @author wilhelm
+ * @author Mona und Wilhelm
  *
  */
 public class RechnerTest {
@@ -51,16 +51,11 @@ public class RechnerTest {
 
   @Test
   public void werteAusNullstelle() {
-    // durch 0 teilen ist nicht erlaubt
-    DoubleDoubleZuDouble lambda2 = (double x, double y) -> {
-      if (x != 0) {
-        return -(y / x);
-      }
-      return 0;
-    };
+    DoubleDoubleZuDouble lambda2 = (double x, double y) -> {return -(y / x);};
+    
     assertEquals("Fehler bei Nullstelle", lambda2.werteAus(4.0, 3.0), -0.75,
         1e-10);
     assertEquals("Fehler bei Nullstelle", lambda2.werteAus(6.0, -6.0), 1, 1e-10);
-    assertEquals("Fehler bei Nullstelle", lambda2.werteAus(0, 8.5), 0, 1e-10);
+    assertEquals("Fehler bei Nullstelle", lambda2.werteAus(1,8.5 ), -8.5, 1e-10);
   }
 }

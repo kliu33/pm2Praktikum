@@ -1,19 +1,25 @@
 package aufgabenblatt2;
 
-import java.util.LinkedList;
-import java.util.List;
-
+/**
+ * simuliert ein Autorennen
+ * 
+ * @author Wilhelm und Mona
+ *
+ */
 public class Rennentest {
 
-  public static void main(String []args){
-    List<Rennauto> autoliste = new LinkedList<Rennauto>();
-    Rennauto auto1 = new Rennauto(1, 10, "Alonso");
-    Rennauto auto2 = new Rennauto(1, 10, "Vettel");
-    Rennauto auto3 = new Rennauto(1, 10, "Button");
-    autoliste.add(auto1);
-    autoliste.add(auto2);
-    autoliste.add(auto3);
-    Rennsimulation simu = new Rennsimulation(autoliste);
+  /**
+   * main
+   * @param args
+   *          Kommandozeilenparameter
+   */
+  public static void main(String[] args) {
+
+    Rennsimulation simu = new Rennsimulation(10);
+    simu.autoHinzufuegen("Alonso", 10);
+    simu.autoHinzufuegen("Vettel", 1);
+    simu.autoHinzufuegen("Button", 1);
+    simu.autoHinzufuegen("Hamilton", 2);
     simu.rennstart();
   }
 }
