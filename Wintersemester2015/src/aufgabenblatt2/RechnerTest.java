@@ -57,5 +57,6 @@ public class RechnerTest {
         1e-10);
     assertEquals("Fehler bei Nullstelle", lambda2.werteAus(6.0, -6.0), 1, 1e-10);
     assertEquals("Fehler bei Nullstelle", lambda2.werteAus(1,8.5 ), -8.5, 1e-10);
+    assertEquals("Fehler bei Nullstelle", lambda2.werteAus(0,1 ),Double.NEGATIVE_INFINITY, 1e-10);
   }
 }
