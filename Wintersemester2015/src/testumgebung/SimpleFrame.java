@@ -17,14 +17,6 @@ public class SimpleFrame extends Application {
 
   public static void main(String[] args) {
     launch(args);
-
-    Platform.runLater(new Runnable() {
-      @Override
-      public void run() {
-         Application.launch("ss");
-         System.out.println("werewrew");
-      }
-    });
   }
 
   @Override
@@ -86,6 +78,8 @@ public class SimpleFrame extends Application {
       path.setStroke(Color.BLACK);
       path.setStrokeWidth(2);
       gridPane.add(path, 0, i);
+
+   
     }
 
     root.getChildren().add(gridPane);
