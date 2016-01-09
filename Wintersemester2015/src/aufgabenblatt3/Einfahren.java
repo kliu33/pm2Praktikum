@@ -2,7 +2,7 @@ package aufgabenblatt3;
 
 /**
  * Einfahren eines Zuges.
- * @author wilhelm
+ * @author Wilhelm und Mona
  *
  */
 public class Einfahren implements AufgabeStrategie {
@@ -30,6 +30,9 @@ public class Einfahren implements AufgabeStrategie {
     this.bahnhof = bahnhof;
   }
 
+  /**
+   * Lässt einen Zug in den Bahnhof einfahren.
+   */
   @Override
   public void aufgabeAusführen() {
     bahnhof.zugEinfahren(gleis);

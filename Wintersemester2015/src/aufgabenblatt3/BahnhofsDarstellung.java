@@ -63,7 +63,7 @@ public class BahnhofsDarstellung extends Application implements Observer {
    * @param stage
    */
   public void init(Stage stage) {
-    stage.setTitle("Simple Frame with a Button");
+    stage.setTitle("Bahnhof Büchen");
     StackPane root = new StackPane();
 
     // Szenengraph

@@ -3,7 +3,7 @@ package aufgabenblatt3;
 /**
  * Ausfahren eines Zuges.
  * 
- * @author wilhelm
+ * @author Wilhelm und Mona
  *
  */
 public class Ausfahren implements AufgabeStrategie {
@@ -31,6 +31,9 @@ public class Ausfahren implements AufgabeStrategie {
     this.bahnhof = bahnhof;
   }
 
+  /**
+   * Lässt einen Zug aus dem Bahnhof ausfahren.
+   */
   @Override
   public void aufgabeAusführen() {
     bahnhof.zugAusfahren(gleis);

@@ -54,7 +54,7 @@ public class Simulation implements Runnable {
       lokfuehrer.start();
       gleisnummer++;
       try {
-        Thread.sleep(1000);
+        Thread.sleep(100);
       } catch (InterruptedException e) {
         // Exception - (wird nicht interrupted)
       }
